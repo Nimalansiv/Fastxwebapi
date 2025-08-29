@@ -1,3 +1,4 @@
+<<<<<<< HEAD:FastxWebApi-backend/User.cs
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -38,3 +39,45 @@ namespace FastxWebApi.Models
         public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
     }
 }
+=======
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace FastxWebApi.Models
+{
+    public class User
+    {
+       
+        public int UserId {  get; set; }
+        public string Name { get; set; } = string.Empty;
+
+        public string Email { get; set; } = string.Empty;
+
+        public byte[] HashKey { get; set; } = Array.Empty<byte>();
+        public byte[] Password { get; set; } = Array.Empty<byte>();
+
+        public string Gender { get; set; } = string.Empty;
+        public string ContactNumber { get; set; } = string.Empty;
+
+        public string Address { get; set; } = string.Empty;
+        public int RoleId {  get; set; }
+       
+
+        public Role Role { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public int? BusId { get; set; }
+        
+
+        
+        public ICollection<Bus>? Buses { get; set; }
+
+
+        public bool IsDeleted { get; set; } = false;
+        public ICollection<Refund> ProcessedRefunds { get; set; } = new List<Refund>();
+
+        public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+    }
+}
+>>>>>>> e40ecec (initial commit - backend fastx):Models/User.cs
